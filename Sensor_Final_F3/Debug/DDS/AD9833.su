@@ -1,0 +1,9 @@
+../DDS/AD9833.c:16:6:AD9833_Write_Register	24	static,ignoring_inline_asm
+../DDS/AD9833.c:46:6:AD9833_SetFrequency	24	static
+../DDS/AD9833.c:99:6:AD9833_SetPhase	16	static
+../DDS/AD9833.c:120:6:AD9833_SetShape	16	static
+../DDS/AD9833.c:144:6:AD9833_Reset	16	static
+../DDS/AD9833.c:152:6:AD9833_Power_Down	16	static
+../DDS/AD9833.c:168:6:AD9833_Generate_Wave	16	static
+../DDS/AD9833.c:193:6:AD9833_Init	8	static
+../DDS/AD9833.c:200:6:AD9833_IO_LOW	8	static

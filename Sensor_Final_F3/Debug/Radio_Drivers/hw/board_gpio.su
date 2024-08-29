@@ -1,0 +1,3 @@
+../Radio_Drivers/hw/board_gpio.c:11:6:DelayMs	16	static
+../Radio_Drivers/hw/board_gpio.c:16:6:GpioWrite	16	static
+../Radio_Drivers/hw/board_gpio.c:21:15:GpioRead	16	static
