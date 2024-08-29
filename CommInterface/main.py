@@ -16,3 +16,5 @@ Commain = ComGui(Rootmain.root, MySerial, Mydata)
 
 
 Rootmain.root.mainloop()
+
+# this is a test
