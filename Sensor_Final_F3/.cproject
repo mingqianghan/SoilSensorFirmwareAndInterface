@@ -56,6 +56,9 @@
 									<listOptionValue builtIn="false" value="&quot;D:\St Workspace\Sensor_Final_F3\DDS&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;D:\St Workspace\Sensor_Final_F3\Radio_Drivers&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;D:\St Workspace\Sensor_Final_F3\Sensor_Drivers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\Git tools\DielectricSpectrumSoilData-CommInterface\Sensor_Final_F3\DDS&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\Git tools\DielectricSpectrumSoilData-CommInterface\Sensor_Final_F3\Radio_Drivers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\Git tools\DielectricSpectrumSoilData-CommInterface\Sensor_Final_F3\Sensor_Drivers&quot;"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.981762119" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>

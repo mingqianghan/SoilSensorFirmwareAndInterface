@@ -1,7 +1,7 @@
 Radio_Drivers/radio-board/sx126x-board.o: \
  ../Radio_Drivers/radio-board/sx126x-board.c \
  ../Radio_Drivers/radio-board/utilities.h \
- D:/St\ Workspace/Sensor_Final_F3/Sensor_Drivers/Sensor_Drivers.h \
+ D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Sensor_Drivers/Sensor_Drivers.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -35,17 +35,17 @@ Radio_Drivers/radio-board/sx126x-board.o: \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
- D:/St\ Workspace/Sensor_Final_F3/Sensor_Drivers/Sensor_Config.h \
- D:/St\ Workspace/Sensor_Final_F3/DDS/AD9833.h \
- D:/St\ Workspace/Sensor_Final_F3/Sensor_Drivers/Sensor_Config.h \
- D:/St\ Workspace/Sensor_Final_F3/DDS/AD9914.h \
- D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/hw\board_gpio.h \
- D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/sx126x\radio.h \
- D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/sx126x\sx126x.h \
- D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/sx126x\radio.h \
- D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/radio-board\sx126x-board.h \
- D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/sx126x/sx126x.h \
- D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/radio-board\Radio_Process.h \
+ D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Sensor_Drivers/Sensor_Config.h \
+ D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/DDS/AD9833.h \
+ D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Sensor_Drivers/Sensor_Config.h \
+ D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/DDS/AD9914.h \
+ D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/hw\board_gpio.h \
+ D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/sx126x\radio.h \
+ D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/sx126x\sx126x.h \
+ D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/sx126x\radio.h \
+ D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/radio-board\sx126x-board.h \
+ D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/sx126x/sx126x.h \
+ D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/radio-board\Radio_Process.h \
  ../Core/Inc/adc.h ../Core/Inc/main.h ../Core/Inc/dma.h \
  ../FATFS/App/fatfs.h ../Middlewares/Third_Party/FatFs/src/ff.h \
  ../Middlewares/Third_Party/FatFs/src/integer.h ../FATFS/Target/ffconf.h \
@@ -56,10 +56,10 @@ Radio_Drivers/radio-board/sx126x-board.o: \
  ../Middlewares/Third_Party/FatFs/src/ff.h ../FATFS/Target/sd_diskio.h \
  ../Core/Inc/rtc.h ../Core/Inc/sdio.h ../Core/Inc/spi.h \
  ../Core/Inc/gpio.h \
- D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/hw\board_spi.h \
+ D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/hw\board_spi.h \
  ../Radio_Drivers/radio-board/sx126x-board.h
 ../Radio_Drivers/radio-board/utilities.h:
-D:/St\ Workspace/Sensor_Final_F3/Sensor_Drivers/Sensor_Drivers.h:
+D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Sensor_Drivers/Sensor_Drivers.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
@@ -93,17 +93,17 @@ D:/St\ Workspace/Sensor_Final_F3/Sensor_Drivers/Sensor_Drivers.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
-D:/St\ Workspace/Sensor_Final_F3/Sensor_Drivers/Sensor_Config.h:
-D:/St\ Workspace/Sensor_Final_F3/DDS/AD9833.h:
-D:/St\ Workspace/Sensor_Final_F3/Sensor_Drivers/Sensor_Config.h:
-D:/St\ Workspace/Sensor_Final_F3/DDS/AD9914.h:
-D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/hw\board_gpio.h:
-D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/sx126x\radio.h:
-D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/sx126x\sx126x.h:
-D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/sx126x\radio.h:
-D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/radio-board\sx126x-board.h:
-D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/sx126x/sx126x.h:
-D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/radio-board\Radio_Process.h:
+D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Sensor_Drivers/Sensor_Config.h:
+D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/DDS/AD9833.h:
+D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Sensor_Drivers/Sensor_Config.h:
+D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/DDS/AD9914.h:
+D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/hw\board_gpio.h:
+D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/sx126x\radio.h:
+D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/sx126x\sx126x.h:
+D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/sx126x\radio.h:
+D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/radio-board\sx126x-board.h:
+D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/sx126x/sx126x.h:
+D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/radio-board\Radio_Process.h:
 ../Core/Inc/adc.h:
 ../Core/Inc/main.h:
 ../Core/Inc/dma.h:
@@ -122,5 +122,5 @@ D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/radio-board\Radio_Process.h:
 ../Core/Inc/sdio.h:
 ../Core/Inc/spi.h:
 ../Core/Inc/gpio.h:
-D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/hw\board_spi.h:
+D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/hw\board_spi.h:
 ../Radio_Drivers/radio-board/sx126x-board.h:

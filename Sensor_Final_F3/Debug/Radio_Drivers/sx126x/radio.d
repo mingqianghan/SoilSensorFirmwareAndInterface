@@ -1,9 +1,9 @@
 Radio_Drivers/sx126x/radio.o: ../Radio_Drivers/sx126x/radio.c \
- D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/radio-board\utilities.h \
+ D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/radio-board\utilities.h \
  ../Radio_Drivers/sx126x/radio.h ../Radio_Drivers/sx126x/sx126x.h \
- D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/radio-board\sx126x-board.h \
- D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/sx126x/sx126x.h \
- D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/hw\board_gpio.h \
+ D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/radio-board\sx126x-board.h \
+ D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/sx126x/sx126x.h \
+ D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/hw\board_gpio.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -37,12 +37,12 @@ Radio_Drivers/sx126x/radio.o: ../Radio_Drivers/sx126x/radio.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
-D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/radio-board\utilities.h:
+D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/radio-board\utilities.h:
 ../Radio_Drivers/sx126x/radio.h:
 ../Radio_Drivers/sx126x/sx126x.h:
-D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/radio-board\sx126x-board.h:
-D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/sx126x/sx126x.h:
-D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/hw\board_gpio.h:
+D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/radio-board\sx126x-board.h:
+D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/sx126x/sx126x.h:
+D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/hw\board_gpio.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:

@@ -50,6 +50,9 @@
 									<listOptionValue builtIn="false" value="&quot;D:\St Workspace\SX1262_Host_V1\SX1262 drivers&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;D:\St Workspace\SX1262_Host_V1\SX1262 drivers\hw&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;D:\St Workspace\SX1262_Host_V1\SX1262 drivers\sx126x&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\Git tools\DielectricSpectrumSoilData-CommInterface\SX1262_Host_V1\SX1262 drivers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\Git tools\DielectricSpectrumSoilData-CommInterface\SX1262_Host_V1\SX1262 drivers\sx126x&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\Git tools\DielectricSpectrumSoilData-CommInterface\SX1262_Host_V1\SX1262 drivers\hw&quot;"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.1170113760" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>

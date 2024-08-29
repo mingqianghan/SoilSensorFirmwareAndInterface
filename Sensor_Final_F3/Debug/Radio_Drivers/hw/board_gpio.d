@@ -1,5 +1,5 @@
 Radio_Drivers/hw/board_gpio.o: ../Radio_Drivers/hw/board_gpio.c \
- D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/sx126x\radio.h \
+ D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/sx126x\radio.h \
  ../Radio_Drivers/hw/board_gpio.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
@@ -34,7 +34,7 @@ Radio_Drivers/hw/board_gpio.o: ../Radio_Drivers/hw/board_gpio.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
-D:/St\ Workspace/Sensor_Final_F3/Radio_Drivers/sx126x\radio.h:
+D:/Git\ tools/DielectricSpectrumSoilData-CommInterface/Sensor_Final_F3/Radio_Drivers/sx126x\radio.h:
 ../Radio_Drivers/hw/board_gpio.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
