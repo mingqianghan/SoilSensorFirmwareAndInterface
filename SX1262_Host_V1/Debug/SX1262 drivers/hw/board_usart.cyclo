@@ -1,0 +1,4 @@
+board_usart.c:33:1:__io_putchar	1
+board_usart.c:43:6:HAL_UART_RxCpltCallback	4
+board_usart.c:69:6:UART_Start_Receive	1
+board_usart.c:74:6:Get_Received_Line	2
