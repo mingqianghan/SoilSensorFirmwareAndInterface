@@ -9,29 +9,36 @@ from datetime import datetime
 import os
 import random
 import pandas as pd
+import numpy as np
 
 class DataMaster():
     def __init__(self):
         self.sync_out = "#?#\n"
         self.sync_in = "!"
         self.Start_out = "#A#\n"
+        self.disconnect_out = "#H#\n"
         self.Time_rqst = "T"
         self.Data_in = "D"
         self.random_rqst ="R"
         self.Info_in = "I"
         self.St_talking = "S"
         self.Fre_ID_done = "Y"
+        self.WID_done = "Z"
+        self.node_done = "W"
         
+        self.config = []
+        self.nodes = {}
         self.fre_IDs = []
+        self.working_nodes = []
+        self.sync_ok = False
+        self.WID_ok = False
         self.saved_data = []
         self.msg = []
-        self.SiteName = None
-        self.SiteLatitude = None
-        self.SiteLongitude = None
-        self.sensorIDs = []
-        self.sensordnIDs = []
         self.random_radio = []
         self.radio_test_data = []
+        self.fre_id_rec = []
+        self.mag = []
+        self.phs = []
         self.data_error_count = 0
         self.random_num_len = 0
         self.radio_cmd = 0
@@ -39,7 +46,6 @@ class DataMaster():
         self.data_save_ok = False
         self.TimeRes = None
         self.Data_len = None
-        self.sync_ok = False
         self.random_ok = False
         self.current_node = None
         self.Info_display = False
@@ -47,16 +53,18 @@ class DataMaster():
         self.St_tlk_ok = False
         self.t_rqst_ok = False
         self.fre_rec = False
+        self.node_done_flag = False
         
         
     def DecodeMsg(self):
-        self.sync_ok = False
+        # self.sync_ok = False
         self.t_rqst_ok = False
         self.random_ok = False
         self.Info_display = False
         self.Received_data = False
         self.St_tlk_ok = False
         self.fre_rec = False
+        self.node_done_flag = False
         
         temp = self.RowMsg.decode('utf8') 
         if "#" in temp: 
@@ -65,16 +73,9 @@ class DataMaster():
             del self.msg[0]
             # print(f"After removing index :{self.msg}")
             if(self.sync_in in self.msg[0]): 
-                if(len(self.msg)>2):
-                    rx_data = self.msg[2].split("_")
-                    if(len(rx_data)>3):
-                        self.SiteName = rx_data[0]
-                        self.SiteLatitude = float(rx_data[1])
-                        self.SiteLongitude = float(rx_data[2])
-                        IDs = rx_data[3].split(",")
-                        self.sensorIDs = [int(data) for data in IDs]
-                        self.sync_ok = True
-                #print(self.allnode)
+                self.sync_ok = True
+            if(self.WID_done in self.msg[0]):
+                self.WID_ok = True
             if(self.Fre_ID_done in self.msg[0]):
                 self.fre_rec = True
             if(self.St_talking in self.msg[0]):
@@ -88,6 +89,8 @@ class DataMaster():
                 self.Info_display = True
             if(self.Data_in in self.msg[0]):
                 self.Received_data = True
+            if(self.node_done in self.msg[0]):
+                self.node_done_flag = True
                         
                 
     def TimeGeneration(self):
@@ -109,6 +112,7 @@ class DataMaster():
     def RandomNumberGeneration(self):
         random_numbers = [random.randint(0, 255) 
                           for _ in range(self.random_num_len)]
+        #print(random_numbers)
         
         test_data = [self.radio_cmd, self.current_node] + random_numbers
         self.radio_test_data.append(test_data)
@@ -120,6 +124,7 @@ class DataMaster():
         self.random_radio += "#\n"
         
         #print(self.random_radio)
+
         
     def SaveRadioData(self):
         if len(self.msg)>3 and self.msg[3]: 
@@ -139,13 +144,13 @@ class DataMaster():
         if not os.path.exists(node_directory): 
             os.makedirs(node_directory)
             
-        filename1 = (f"d{self.current_node}-"
-                    f"{(now.year)%100:02d}_"
-                    f"{now.month:02d}_"
-                    f"{now.day:02d}-"
-                    f"{now.hour:02d}_"
-                    f"{now.minute:02d}_"
-                    f"{now.second:02d}.csv")
+        self.filename1 = (f"d{self.current_node}-"
+                          f"{(now.year)%100:02d}_"
+                          f"{now.month:02d}_"
+                          f"{now.day:02d}-"
+                          f"{now.hour:02d}_"
+                          f"{now.minute:02d}_"
+                          f"{now.second:02d}.csv")
         
         filename2 = (f"r{self.current_node}-"
                     f"{(now.year)%100:02d}_"
@@ -156,25 +161,25 @@ class DataMaster():
                     f"{now.second:02d}.csv")
         
         if(self.data_error_count>0): 
-            filename1 = (f"d{self.current_node}-"
-                         f"{(now.year)%100:02d}_"
-                         f"{now.month:02d}_"
-                         f"{now.day:02d}-"
-                         f"{now.hour:02d}_"
-                         f"{now.minute:02d}_"
-                         f"{now.second:02d}(ve{self.data_error_count}).csv")  
+            self.filename1 = (f"d{self.current_node}-"
+                              f"{(now.year)%100:02d}_"
+                              f"{now.month:02d}_"
+                              f"{now.day:02d}-"
+                              f"{now.hour:02d}_"
+                              f"{now.minute:02d}_"
+                              f"{now.second:02d}(ve{self.data_error_count}).csv")  
         else: 
-            filename1 = (f"d{self.current_node}-"
-                         f"{(now.year)%100:02d}_"
-                         f"{now.month:02d}_"
-                         f"{now.day:02d}-"
-                         f"{now.hour:02d}_"
-                         f"{now.minute:02d}_"
-                         f"{now.second:02d}(wo).csv")  
+            self.filename1 = (f"d{self.current_node}-"
+                              f"{(now.year)%100:02d}_"
+                              f"{now.month:02d}_"
+                              f"{now.day:02d}-"
+                              f"{now.hour:02d}_"
+                              f"{now.minute:02d}_"
+                              f"{now.second:02d}(wo).csv")  
             
         
         # Complete path includes the node-specific subdirectory
-        complete_path1 = os.path.join(node_directory, filename1)
+        complete_path1 = os.path.join(node_directory, self.filename1)
         complete_path2 = os.path.join(node_directory, filename2)
       
         # Define data types for each column
@@ -191,6 +196,10 @@ class DataMaster():
                                              'phs_m(V)', 'parity',
                                              'RSSI(dBm)', 
                                              'SNR (dB)']).astype(column_types1)
+        
+        self.mag = df_sensor_data['mag (dig)']
+        self.phs = df_sensor_data['phs (dig)']
+        self.fre_id_rec = df_sensor_data['fre_idx']
         
         df_radio_data = pd.DataFrame(self.radio_test_data)
         df_radio_data = df_radio_data.astype(int)
@@ -242,9 +251,10 @@ class DataMaster():
         self.SiteLatitude = None
         self.SiteLongitude = None
         self.sensorIDs = []
-        self.sensordnIDs = []
         self.random_radio = []
         self.radio_test_data = []
+        self.mag = []
+        self.phs = []
         self.data_error_count = 0
         self.random_num_len = 0
         self.radio_cmd = 0
@@ -259,6 +269,5 @@ class DataMaster():
         self.Received_data = False
         self.St_tlk_ok = False
         self.t_rqst_ok = False
-                    
-# test 2
-            
+        self.node_done_flag = False
+                       

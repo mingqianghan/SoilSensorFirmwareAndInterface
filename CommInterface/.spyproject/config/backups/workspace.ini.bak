@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = 'empty-project-type'
-recent_files = ['main.py', 'Data_Com_Ctrl.py', 'GUI_main.py', 'Serial_Com_Ctrl.py']
+recent_files = ['AppMain.py', 'CommCollectGui.py', 'Serial_Com_Ctrl.py', 'HomeGui.py', 'AppRoot.py', 'Data_Com_Ctrl.py', 'classes_CommInterface.dot']
 
 [main]
 version = 0.2.0
