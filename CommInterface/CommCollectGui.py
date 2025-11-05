@@ -375,12 +375,12 @@ class DataCollectGui():
         else:
             self.drop_node.config(state=NORMAL)
             self.data.nodes = {re.search(r'\d+', node['name']).group(): 'NotSelected' 
-                              for node in self.data.config['markers']}
+                              for node in self.data.config}
             
             
     def node_selection(self, other):
         self.data.nodes = {re.search(r'\d+', node['name']).group(): 'NotSelected' 
-                          for node in self.data.config['markers']}
+                          for node in self.data.config}
         selected_id = self.selected_node.get()
         if "-" not in selected_id:
             numid = re.search(r'\d+', selected_id).group()
@@ -486,8 +486,9 @@ class PlotGui:
         
         # Create a custom font object for Matplotlib
         inter_font_path = "font/Inter_18pt-Regular.ttf"
-        self.custom_font = fm.FontProperties(fname=inter_font_path, size=10.3)
-        self.legend_font = fm.FontProperties(fname=inter_font_path, size=10)
+        self.custom_font = fm.FontProperties(fname=inter_font_path, size=7.5)
+        self.legend_font = fm.FontProperties(fname=inter_font_path, size=7)
+        
         
         self.plot_frame = Frame(self.parent_frame, bg='#eff0f7', 
                                 highlightbackground='#797982', 
@@ -535,7 +536,7 @@ class PlotGui:
     def draw_plot(self):
         # Create a figure with 2 subplots that share both x and y axes
         self.fig, (self.ax1, self.ax2) = plt.subplots(nrows=2, ncols=1, sharex=True)
-        self.fig.subplots_adjust(top=0.99, bottom=0.2, left=0.1, right=0.99, hspace=0.05)
+        self.fig.subplots_adjust(top=0.99, bottom=0.2, left=0.13, right=0.99, hspace=0.05)
         
         self.fig.set_facecolor("#eff0f7") 
         self.ax1.set_facecolor("#eff0f7")
@@ -583,12 +584,12 @@ class PlotGui:
         color = (random.random(), random.random(), random.random()) 
         
         # Add a new line to ax1
-        new_line1, = self.ax1.plot(new_x, new_y1, linestyle='-', linewidth=2, color=color, label=label)
+        new_line1, = self.ax1.plot(new_x, new_y1, linestyle='-', linewidth=1.5, color=color, label=label)
                                   #  marker='o', markersize=1, color=color, label=label)
         self.lines_ax1.append(new_line1)
 
         # Add a new line to ax2
-        new_line2, = self.ax2.plot(new_x, new_y2, linestyle='-', linewidth=2, color=color, label=label)  
+        new_line2, = self.ax2.plot(new_x, new_y2, linestyle='-', linewidth=1.5, color=color, label=label)  
                                   #  marker='o', markersize=1, 
         self.lines_ax2.append(new_line2)
 

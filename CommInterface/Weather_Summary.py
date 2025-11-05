@@ -1,5 +1,6 @@
 import requests
 from datetime import datetime, timedelta
+import numpy as np
 
 class WeatherSummary:
     def __init__(self, lat, lon, api_key):
@@ -23,12 +24,7 @@ class WeatherSummary:
             'units': self.units
         }
 
-        response = requests.get(url, params=params)
-        if response.status_code == 200:
-            return response.json()
-        else:
-            # print(f"Failed to get data. Status code: {response.status_code}")
-            return None
+        return self.fetch_data(url, params)
 
     def generate_past_week_summary(self):
         past_week_data = []
@@ -62,6 +58,18 @@ class WeatherSummary:
                 'avg_wind_speed': avg_wind_speed,
                 'total_rainfall': total_rainfall
             }
+        else:
+            self.past_week_summary = {
+                'highest_temp': np.nan,
+                'lowest_temp': np.nan,
+                'avg_temp': np.nan,
+                'highest_humidity': np.nan,
+                'lowest_humidity': np.nan,
+                'avg_humidity': np.nan,
+                'avg_wind_speed': np.nan,
+                'total_rainfall': np.nan
+            }
+                
 
     def get_next_week_forecast(self):
         url = f"{self.base_url}"
@@ -72,12 +80,9 @@ class WeatherSummary:
             'appid': self.api_key,
             'units': self.units
         }
+        
+        return self.fetch_data(url, params)
 
-        response = requests.get(url, params=params)
-        if response.status_code == 200:
-            return response.json()
-        else:
-            return None
 
     def generate_next_week_summary(self):
         forecast_data = self.get_next_week_forecast()
@@ -104,6 +109,17 @@ class WeatherSummary:
                 'avg_wind_speed': avg_wind_speed,
                 'total_rainfall': total_rainfall
             }
+        else:
+            self.next_week_summary = {
+                'highest_temp': np.nan,
+                'lowest_temp': np.nan,
+                'avg_temp': np.nan,
+                'highest_humidity': np.nan,
+                'lowest_humidity': np.nan,
+                'avg_humidity': np.nan,
+                'avg_wind_speed': np.nan,
+                'total_rainfall': np.nan
+            }
 
 
     def get_current_weather(self):
@@ -115,12 +131,8 @@ class WeatherSummary:
             'appid': self.api_key,
             'units': self.units
         }
-
-        response = requests.get(url, params=params)
-        if response.status_code == 200:
-            return response.json()
-        else:
-            return None
+        return self.fetch_data(url, params)
+        
 
     def generate_current_weather_summary(self):
         current_data = self.get_current_weather()
@@ -141,4 +153,31 @@ class WeatherSummary:
                 'weather_description': weather_description,
                 'icon_url': icon_url
             }
+        else:
+            self.current_weather_summary = {
+                'temp': np.nan,
+                'humidity': np.nan,
+                'wind_speed': np.nan,
+                'weather_description': 'N/A',
+                'icon_url': '-'
+            }
+                
+            
+    def fetch_data(self, url, params, retries=3):
+        """Attempts to fetch data with retries if there is no internet connection."""
+        for attempt in range(retries):
+            try:
+                response = requests.get(url, params=params, timeout=10)
+                response.raise_for_status()  # Raise an error for HTTP errors (e.g., 404, 500)
+                return response.json()  # or response.text if expecting non-JSON data
+            except requests.exceptions.ConnectionError:
+                print(f"Connection error. Retrying ...")
+                #time.sleep(delay)
+            except requests.exceptions.Timeout:
+                print("Request timed out. Please check your network.")
+                break
+            except requests.exceptions.RequestException as e:
+                print(f"Request failed: {e}")
+                break
+        return None  # Return None or a fallback value if all retries fail
             

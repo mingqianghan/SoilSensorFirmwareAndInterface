@@ -12,6 +12,15 @@ import requests
 
 from Weather_Summary import WeatherSummary
 
+def new_img_del(img_self):
+    try:
+        name = img_self.__photo.name
+        img_self.__photo.name = None
+        img_self.__photo.tk.call("image", "delete", name)
+    except Exception:
+        pass
+ImageTk.PhotoImage.__del__ = new_img_del
+
 
 def calculate_center(markers):
     """Calculate the average center of all markers."""
@@ -36,7 +45,7 @@ class HomeGui():
         self.config = config
         
         # Calculate center
-        self.center_lat, self.center_lon = calculate_center(self.config['markers'])
+        self.center_lat, self.center_lon = calculate_center(self.config)
         
         self.weather_summary = WeatherSummary(self.center_lat, self.center_lon, self.api_key)
 
@@ -45,7 +54,6 @@ class HomeGui():
         self.initialize_ui_id = self.parent_frame.after(10, self.initialize_ui)
         
     def initialize_ui(self):
-        self.draw_map()
         self.draw_current_metrics_box()
         
         self.weather_summary.generate_past_week_summary()
@@ -55,7 +63,10 @@ class HomeGui():
         self.weather_summary.generate_next_week_summary()
         next_week_summary = self.weather_summary.next_week_summary
         self.draw_summary_metrics_box(next_week_summary, bgset1='#e68815', locy=450, ftitle='Next Week Forecast')
+        
         self.save_historical_data()
+        
+        self.draw_map()
     
     def draw_map(self):
 
@@ -69,17 +80,17 @@ class HomeGui():
         # Set the initial position and zoom level
         self.map_widget.set_position(self.center_lat, self.center_lon)
         self.map_widget.set_zoom(19.5)
-
+        
         # Load and resize marker images
         original_marker_image = Image.open("images/gps.png")  # Replace with your marker image file path
         resized_marker_image = original_marker_image.resize((30, 30), Image.LANCZOS)
-        marker_icon = ImageTk.PhotoImage(resized_marker_image)
+        self.marker_icon = ImageTk.PhotoImage(resized_marker_image)
         
         all_info_text = "\n"
-        for marker in self.config['markers']:
+        for marker in self.config:
             self.map_widget.set_marker(marker['latitude'], marker['longitude'], 
                                        text=f"{marker['name']}", 
-                                       icon=marker_icon, 
+                                       icon=self.marker_icon, 
                                        text_color="white",
                                        font=("Inter", 12, "bold"))
 
@@ -88,7 +99,8 @@ class HomeGui():
                 f"Lat: {marker['latitude']:.5f}, Lon: {marker['longitude']:.5f}\n\n"
                 )
             all_info_text += info_text
-
+        '''
+        '''
         # Create an info box frame inside the map widget
         info_frame = Frame(self.map_widget, bg="lightgray")
         info_frame.place(relx=0.99, rely=0.01, anchor="ne", width=260, height=240)
@@ -118,6 +130,7 @@ class HomeGui():
         
         # Disable editing of the text widget to make it behave like a read-only label
         info_text_widget.config(state="disabled")
+        
     
     def draw_current_metrics_box(self):
         bgset = '#ffffff'
@@ -144,21 +157,27 @@ class HomeGui():
                             fg=fgset, bg=bgset, font=("Inter", 16, "bold"))
         description.place(x=90, y=15)
         
-        
-        response = requests.get(summary['icon_url'])
-        
-        if response.status_code == 200:
-            image_data = Image.open(BytesIO(response.content))
-            # Resize the image (for example, to 60x60 pixels)
-            resized_image = image_data.resize((65, 65), Image.LANCZOS)
-            # Convert to a format Tkinter can use
-            emoji_tk = ImageTk.PhotoImage(resized_image)
+        if summary.get('icon_url') == '-': 
+            image_data = Image.open('images/remove.png')  
+            resized_image = image_data.resize((30, 30), Image.LANCZOS)
+            self.emoji_tk = ImageTk.PhotoImage(resized_image)
         else:
-            print("Failed to load icon image.")
+            response = requests.get(summary['icon_url'])
+            
+            if response.status_code == 200:
+                image_data = Image.open(BytesIO(response.content))
+                # Resize the image (for example, to 60x60 pixels)
+                resized_image = image_data.resize((65, 65), Image.LANCZOS)
+                # Convert to a format Tkinter can use
+                self.emoji_tk = ImageTk.PhotoImage(resized_image)
+            else:
+                image_data = Image.open('images/remove.png')  
+                resized_image = image_data.resize((30, 30), Image.LANCZOS)
+                self.emoji_tk = ImageTk.PhotoImage(resized_image)
         
         # Adding the image to the Label in tkinter
-        desc_img = Label(self.current_frame, image=emoji_tk, bg=bgset)
-        desc_img.image = emoji_tk  # Prevent garbage collection
+        desc_img = Label(self.current_frame, image=self.emoji_tk, bg=bgset)
+        desc_img.image = self.emoji_tk  # Prevent garbage collection
         desc_img.place(x=10, y=0)
         
         
