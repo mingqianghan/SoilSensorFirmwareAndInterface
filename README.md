@@ -1,6 +1,6 @@
 # Soil Sensor Firmware and Interface
 
-This repository contains the **C firmware** for a dielectric soil sensor system and a **Python-based interface** for data acquisition and communication with the above-ground host. The code is part of a project for **real-time monitoring of soil moisture and nutrients**.
+This repository contains the **C firmware** for a dielectric soil sensor system and a **Python-based interface** for data acquisition and communication with the aboveground host. The code is part of a project for **real-time monitoring of soil moisture and nutrients**.
 
 ---
 
