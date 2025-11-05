@@ -1,4 +1,0 @@
-../SX1262 drivers/hw/board_gpio.c:11:6:DelayMs	16	static
-../SX1262 drivers/hw/board_gpio.c:16:6:GpioWrite	16	static
-../SX1262 drivers/hw/board_gpio.c:21:15:GpioRead	16	static
-../SX1262 drivers/hw/board_gpio.c:27:6:HAL_GPIO_EXTI_Callback	16	static

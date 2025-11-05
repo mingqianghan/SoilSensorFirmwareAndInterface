@@ -1,4 +1,0 @@
-board_gpio.c:11:6:DelayMs	1
-board_gpio.c:16:6:GpioWrite	1
-board_gpio.c:21:15:GpioRead	1
-board_gpio.c:27:6:HAL_GPIO_EXTI_Callback	1
