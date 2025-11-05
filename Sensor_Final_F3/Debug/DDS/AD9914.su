@@ -3,9 +3,9 @@
 ../DDS/AD9914.c:49:6:AD9914_Send_Reset	8	static,ignoring_inline_asm
 ../DDS/AD9914.c:64:6:AD9914_Write_Register	16	static
 ../DDS/AD9914.c:84:6:AD9914_Initilize_DDS	8	static
-../DDS/AD9914.c:99:6:AD9914_Calibrate_DAC	8	static
-../DDS/AD9914.c:116:6:AD9914_Power_Down	16	static
-../DDS/AD9914.c:130:6:AD9914_Generate_Wave	16	static
-../DDS/AD9914.c:137:10:AD9914_Calculate_frequency_tuning_word	24	static
-../DDS/AD9914.c:160:10:AD9914_Phase_Amp_Set	24	static
-../DDS/AD9914.c:188:6:AD9914_IO_LOW	8	static
+../DDS/AD9914.c:102:6:AD9914_Calibrate_DAC	8	static
+../DDS/AD9914.c:119:6:AD9914_Power_Down	16	static
+../DDS/AD9914.c:133:6:AD9914_Generate_Wave	16	static
+../DDS/AD9914.c:140:10:AD9914_Calculate_frequency_tuning_word	24	static
+../DDS/AD9914.c:163:10:AD9914_Phase_Amp_Set	24	static
+../DDS/AD9914.c:191:6:AD9914_IO_LOW	8	static

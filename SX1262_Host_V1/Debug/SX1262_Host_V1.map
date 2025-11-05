@@ -5090,7 +5090,7 @@ LOAD d:/st software/cubeide/stm32cubeide_1.12.1/stm32cubeide/plugins/com.st.stm3
  .debug_line    0x000000000000d522     0x140a ./SX1262 drivers/sx126x/radio.o
  .debug_line    0x000000000000e92c     0x138c ./SX1262 drivers/sx126x/sx126x.o
 
-.debug_str      0x0000000000000000    0x8953e
+.debug_str      0x0000000000000000    0x89519
  .debug_str     0x0000000000000000    0x84251 ./Core/Src/main.o
                                       0x8455e (size before relaxing)
  .debug_str     0x0000000000084251       0x97 ./Core/Src/stm32l1xx_hal_msp.o
@@ -5103,32 +5103,33 @@ LOAD d:/st software/cubeide/stm32cubeide_1.12.1/stm32cubeide/plugins/com.st.stm3
                                        0x5d7f (size before relaxing)
  .debug_str     0x0000000000085ad7       0x99 ./Core/Src/system_stm32l1xx.o
                                       0x7ecd0 (size before relaxing)
- .debug_str     0x0000000000085b70       0x5b ./Core/Startup/startup_stm32l152retx.o
- .debug_str     0x0000000000085bcb      0x2f9 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
+ .debug_str     0x0000000000085b70       0x36 ./Core/Startup/startup_stm32l152retx.o
+                                         0x81 (size before relaxing)
+ .debug_str     0x0000000000085ba6      0x2f9 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
                                       0x7f3f5 (size before relaxing)
- .debug_str     0x0000000000085ec4      0x3ae ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
+ .debug_str     0x0000000000085e9f      0x3ae ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
                                       0x7f4cf (size before relaxing)
- .debug_str     0x0000000000086272      0x257 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.o
+ .debug_str     0x000000000008624d      0x257 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.o
                                       0x7f055 (size before relaxing)
- .debug_str     0x00000000000864c9       0xfd ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o
+ .debug_str     0x00000000000864a4       0xfd ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o
                                       0x7ee63 (size before relaxing)
- .debug_str     0x00000000000865c6      0x281 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o
+ .debug_str     0x00000000000865a1      0x281 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o
                                       0x7f18c (size before relaxing)
- .debug_str     0x0000000000086847      0x608 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o
+ .debug_str     0x0000000000086822      0x608 ./Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o
                                       0x7f735 (size before relaxing)
- .debug_str     0x0000000000086e4f      0x8ac ./SX1262 drivers/SX1262_MX_Process.o
+ .debug_str     0x0000000000086e2a      0x8ac ./SX1262 drivers/SX1262_MX_Process.o
                                       0x8424a (size before relaxing)
- .debug_str     0x00000000000876fb      0x955 ./SX1262 drivers/sx126x-board.o
+ .debug_str     0x00000000000876d6      0x955 ./SX1262 drivers/sx126x-board.o
                                       0x8338c (size before relaxing)
- .debug_str     0x0000000000088050       0x30 ./SX1262 drivers/hw/board_gpio.o
+ .debug_str     0x000000000008802b       0x30 ./SX1262 drivers/hw/board_gpio.o
                                       0x7ee89 (size before relaxing)
- .debug_str     0x0000000000088080       0x27 ./SX1262 drivers/hw/board_spi.o
+ .debug_str     0x000000000008805b       0x27 ./SX1262 drivers/hw/board_spi.o
                                       0x7f023 (size before relaxing)
- .debug_str     0x00000000000880a7       0x8f ./SX1262 drivers/hw/board_usart.o
+ .debug_str     0x0000000000088082       0x8f ./SX1262 drivers/hw/board_usart.o
                                       0x82f30 (size before relaxing)
- .debug_str     0x0000000000088136      0xd85 ./SX1262 drivers/sx126x/radio.o
+ .debug_str     0x0000000000088111      0xd85 ./SX1262 drivers/sx126x/radio.o
                                       0x84b07 (size before relaxing)
- .debug_str     0x0000000000088ebb      0x683 ./SX1262 drivers/sx126x/sx126x.o
+ .debug_str     0x0000000000088e96      0x683 ./SX1262 drivers/sx126x/sx126x.o
                                       0x84075 (size before relaxing)
 
 .comment        0x0000000000000000       0x50

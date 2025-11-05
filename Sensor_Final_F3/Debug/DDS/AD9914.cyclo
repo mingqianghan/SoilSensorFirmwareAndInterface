@@ -3,9 +3,9 @@ AD9914.c:31:6:AD9914_Send_IO_Update	1
 AD9914.c:49:6:AD9914_Send_Reset	1
 AD9914.c:64:6:AD9914_Write_Register	1
 AD9914.c:84:6:AD9914_Initilize_DDS	1
-AD9914.c:99:6:AD9914_Calibrate_DAC	1
-AD9914.c:116:6:AD9914_Power_Down	2
-AD9914.c:130:6:AD9914_Generate_Wave	1
-AD9914.c:137:10:AD9914_Calculate_frequency_tuning_word	1
-AD9914.c:160:10:AD9914_Phase_Amp_Set	1
-AD9914.c:188:6:AD9914_IO_LOW	1
+AD9914.c:102:6:AD9914_Calibrate_DAC	1
+AD9914.c:119:6:AD9914_Power_Down	2
+AD9914.c:133:6:AD9914_Generate_Wave	1
+AD9914.c:140:10:AD9914_Calculate_frequency_tuning_word	1
+AD9914.c:163:10:AD9914_Phase_Amp_Set	1
+AD9914.c:191:6:AD9914_IO_LOW	1

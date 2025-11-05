@@ -100,7 +100,7 @@ Location_Info L1 = {
     .longitude = -96.58213927621752,
     .locationName = "North Farm",
     .sensorCount = 1,
-    .sensorIDs = {5} //test stm32
+    .sensorIDs = {8} //test stm32
 };
 
 uint8_t Last_freIDs_Pkt_len = 0;

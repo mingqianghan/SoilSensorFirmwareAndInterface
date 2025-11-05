@@ -83,6 +83,9 @@ void AD9914_Write_Register(uint8_t RegisterAddress, const uint8_t* Value)
 
 void AD9914_Initilize_DDS()
 {
+	AD9914_Calibrate_DAC();
+	HAL_Delay(5);
+
 	AD9914_Write_Register(CFR1, CFR1Start);
 	//AD9914_Send_IO_Update();
 	AD9914_Write_Register(CFR2, CFR2Start);
