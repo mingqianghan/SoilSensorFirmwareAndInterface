@@ -1,2 +1,5 @@
 .env
 CommInterface/data/
+__pycache__/
+.spyderproject/
+
