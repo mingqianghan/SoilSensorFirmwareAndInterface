@@ -18,7 +18,7 @@
 
 
 // Adjust based on the maximum expected number of sensors
-#define MAX_CLIENTS                                 8
+#define MAX_CLIENTS                                 32
 
 typedef struct {
     uint8_t one_index[MAX_CLIENTS];  // Indices where bits are 1
@@ -63,7 +63,7 @@ void OnRxError( void );
 void MX_Send_Receive( void );
 void Print_Radio_RX_Data( void );
 void Raido_Init( void );
-BitIndices findBitIndices(uint8_t value, uint8_t n);
+BitIndices findBitIndices(uint32_t value, uint8_t n);
 void Sensor_Node_Local_time( void );
 void UART_Sync_Check( void );
 void DateTime_UART_To_Radio_Format( void );

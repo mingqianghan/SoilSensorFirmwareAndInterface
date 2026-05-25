@@ -8,7 +8,7 @@
 #ifndef SENSOR_CONFIG_H_
 #define SENSOR_CONFIG_H_
 
-#define SensorID        3          // Must be changed for a new sensor node (0-255)
+#define SensorID        30          // Must be changed for a new sensor node (0-255) 30(test ID)
 
 
 

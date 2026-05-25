@@ -114,7 +114,7 @@ uint8_t DatatoUART[Band_Max_len][BUFFER_SIZE];
 uint16_t BufferSize = BUFFER_SIZE;
 uint8_t Buffer[BUFFER_SIZE];
 
-uint8_t CLI_Radio_State = 0x00;
+uint32_t CLI_Radio_State = 0x00;
 
 Radio_States_t Radio_State;
 TX_typte TX_cmd;
@@ -204,7 +204,7 @@ void MX_Send_Receive( void )
 				TX_cmd = WK;
 				Current_Check = false;
 
-				if (!(CLI_Radio_State & (1 << i)))
+				if (!(CLI_Radio_State & (1UL << i)))
 				{
 					Wait_UART_Start(L1.sensorIDs[i]);
 					if(gotoend) break;
@@ -271,7 +271,7 @@ void MX_Send_Receive( void )
 								{
 									Current_Check = true;
 									// Set sensor flag bit to indicate the collection is complete for this sensor
-									CLI_Radio_State |= (1U << i);
+									CLI_Radio_State |= (1UL << i);
 								}
 							}
 
@@ -538,12 +538,12 @@ bool Check_All_Data_Collection_Done(uint8_t value, uint8_t n)
 }
 
 // Function to find bit indices
-BitIndices findBitIndices(uint8_t value, uint8_t n)
+BitIndices findBitIndices(uint32_t value, uint8_t n)
 {
     BitIndices result = {{0}, {0}, 0, 0}; // Initialize result structure
     for (uint8_t i = 0; i < n; i++)
     {
-        if (value & (1 << i))
+        if (value & (1UL << i))
         {
             // If bit i is set
             result.one_index[result.onesCount++] = i;
@@ -679,9 +679,10 @@ void WorkingIDs_From_UART( void )
 			}
 			else if (UART_RXBuffer[1] == 'C')
 			{
-				len_sum += (UART_RXBuffer[3] - '0');
+				uint8_t chunk_n = UART_RXBuffer[3] - '0';
+				len_sum += chunk_n;
 
-				for (uint8_t i = 0; i < 8; i++)
+				for (uint8_t i = 0; i < chunk_n; i++)
 				{
 					uint8_t baseIndex = 5 + 3 * i; // Calculate base index for each block of values
 				    L1.sensorIDs[RX_count * 8 + i] = ((UART_RXBuffer[baseIndex] - '0') * 100 +
@@ -893,7 +894,7 @@ void Wait_UART_Start( uint8_t NodeID )
 		{
 			if(UART_RXBuffer[1] == 'A')
 			{
-				printf("#S#%d#------------------------- Talking to sensor -------------------------#\n", NodeID);
+				printf("#S#%d#---------------- Talking to sensor ---------------#\n", NodeID);
 				break;
 			}
 		}

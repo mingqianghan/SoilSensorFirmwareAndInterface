@@ -1,24 +1,94 @@
 {
     "markers": [
         {
-            "name": "Node 5",
-            "latitude": 39.20633241661939,
-            "longitude": -96.59355445916198
+            "name": "S1",
+            "latitude": 39.21178078,
+            "longitude": -96.5949404
         },
         {
-            "name": "Node 7",
-            "latitude": 39.2063843324999,
-            "longitude": -96.59369439398203
+            "name": "S2",
+            "latitude": 39.21171918,
+            "longitude": -96.59494122
         },
         {
-            "name": "Node 8",
-            "latitude": 39.20638,
-            "longitude": -96.59369
+            "name": "S3",
+            "latitude": 39.21167075,
+            "longitude": -96.59494452
         },
         {
-            "name": "Node 9",
-            "latitude": 39.20646056334354,
-            "longitude": -96.59359431938344
+            "name": "S4",
+            "latitude": 39.21167088,
+            "longitude": -96.59506776
+        },
+        {
+            "name": "S5",
+            "latitude": 39.21171887,
+            "longitude": -96.59506327
+        },
+        {
+            "name": "S6",
+            "latitude": 39.2117812,
+            "longitude": -96.59505894
+        },
+        {
+            "name": "S7",
+            "latitude": 39.2115865,
+            "longitude": -96.59504616
+        },
+        {
+            "name": "S8",
+            "latitude": 39.21153207,
+            "longitude": -96.59504594
+        },
+        {
+            "name": "S9",
+            "latitude": 39.21153273,
+            "longitude": -96.59516051
+        },
+        {
+            "name": "S10",
+            "latitude": 39.2115871,
+            "longitude": -96.59516427
+        },
+        {
+            "name": "S11",
+            "latitude": 39.21153277,
+            "longitude": -96.59527602
+        },
+        {
+            "name": "S12",
+            "latitude": 39.21158609,
+            "longitude": -96.59527375
+        },
+        {
+            "name": "S13",
+            "latitude": 39.2113954,
+            "longitude": -96.59505847
+        },
+        {
+            "name": "S14",
+            "latitude": 39.21145014,
+            "longitude": -96.59505732
+        },
+        {
+            "name": "S15",
+            "latitude": 39.211395,
+            "longitude": -96.59515798
+        },
+        {
+            "name": "S16",
+            "latitude": 39.21145039,
+            "longitude": -96.59516059
+        },
+        {
+            "name": "S17",
+            "latitude": 39.21139433,
+            "longitude": -96.59527675
+        },
+        {
+            "name": "S18",
+            "latitude": 39.21144971,
+            "longitude": -96.5952767
         }
     ]
 }
